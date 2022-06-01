@@ -1,59 +1,74 @@
 
 window.addEventListener("load", function(e){
 	
-	function fillContentsSection() {
-		var version = "2.2.0";
+	const version = "2.3.0";
 
-		var cS = document.querySelector(".contents-section");
-		if (!cS)
-			return;
+	const cS = document.querySelector(".contents-section");
+	if (!cS)
+		return;
 
-		cS.dataset.contents_sectionVer = version;
-		cS.classList.add("activated");
+	cS.dataset.contents_sectionVer = version;
+	cS.classList.add("activated");
+	
+	var parentEl = cS.parentElement;
+
+	var 
+		coll = parentEl.querySelectorAll("h1, h2, h3, h4, h5, h6"),
+		html = "";
 		
-		var parentEl = cS.parentElement;
 
-		var 
-			coll = parentEl.querySelectorAll("h1, h2, h3, h4, h5, h6"),
-			html = "";	
-			
+	for (var i = 0; i < coll.length; i++) {
+		let 
+			h      = coll[i],
+			hId    = h.id || "hr-"+i,
+			hType  = h.nodeName.toLowerCase(),
+			reduct = hType == "h1" ? getReduction(h) : 0,
+			text   = h.textContent.replace(/</g, "&lt;")
 
-		for (var i = 0; i < coll.length; i++) {
-			var 
-				h = coll[i],
-				hA = document.createElement("a"),
-				hType = h.nodeName.toLowerCase(),
-				text = h.textContent.replace(/</g, "&lt;"),
-				hId = h.id || "hr-"+i
+		h.setAttribute("id", `${hId}_header`);
+		h.appendChild(
+			eHTML(`
+				<a 
+					class="contents-section--scroll-to-content-list"
+					href="#${ hId }_cl_link"
+				></a>
+			`)
+		);
 
-			if (hType === "h1") {
-				let 
-					h_ = h,
-					count = 1;
-				while (h_ = h_.parentElement) {
-					if (["ARTICLE", "ASIDE", "NAV", "SECTION"].includes(h_.nodeName)) {
-						count ++;
-					}
-				}
-				hType = "h"+count
-			}
-			
-			hA.classList.add("contents-section--scroll-to-content-list");
-			hA.setAttribute("href", "#"+hId+"_cl_link")
-
-			h.setAttribute("id", hId+"_header");
-			h.appendChild(hA);
-
-			html += `
-				<div class="${hType}-link-div">
-					<a href="#${hId+"_header"}" class="${hType}-link-a" name="${hId}_cl_link">${text}</a>
-				</div>
-			`;
-		}
-
-		cS.innerHTML += html;
+		html += `
+			<div class="${hType}-link-div ${reduct ? "reduced-by-"+reduct : ""}">
+				<a href="#${hId+"_header"}" class="${hType}-link-a" name="${hId}_cl_link">${text}</a>
+			</div>
+		`;
 	}
 
-	fillContentsSection();
+	cS.innerHTML += html;
+
+	function getReduction(el) {
+		let 
+			reduct  = 0,
+			current = el;
+
+		while (current = current.parentElement)
+			if ([
+				"article", 
+				"aside", 
+				"nav", 
+				"section"
+			].includes(current.nodeName.toLowerCase())) 
+				reduct ++;
+
+		return 6 < reduct ? 6 : reduct;
+	}
+
+	function eHTML(code, shell=null) {
+		const _shell = 
+			! shell                  ? document.createElement("div") :
+			typeof shell == "string" ? document.createElement(shell) :
+			typeof shell == "object" ? shell :
+				null;
+		_shell.innerHTML = code;
+		return _shell.children[0];
+	}
 
 }, false);

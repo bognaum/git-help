@@ -17,33 +17,64 @@
   text-decoration: none;
   font-style: italic;
   font-weight: bold;
-  color: #aaa;
+  color: inherit;
 }
 .contents-section > div > a:hover {
   text-decoration: underline;
 }
 .contents-section > div.h1-link-div {
-  padding: 0px 0px;
+  padding: 0;
+  padding-left: 0px;
   font-size: 18px;
 }
 .contents-section > div.h2-link-div {
-  padding: 0px 40px;
+  padding: 0;
+  padding-left: 40px;
   font-size: 16px;
 }
 .contents-section > div.h3-link-div {
-  padding: 0px 80px;
+  padding: 0;
+  padding-left: 80px;
   font-size: 14px;
 }
 .contents-section > div.h4-link-div {
-  padding: 0px 120px;
+  padding: 0;
+  padding-left: 120px;
   font-size: 12px;
 }
 .contents-section > div.h5-link-div {
-  padding: 0px 160px;
+  padding: 0;
+  padding-left: 160px;
   font-size: 10px;
 }
 .contents-section > div.h6-link-div {
-  padding: 0px 200px;
+  padding: 0;
+  padding-left: 200px;
+  font-size: 8px;
+}
+.contents-section > div.h1-link-div.reduced-by-1 {
+  padding: 0;
+  padding-left: 40px;
+  font-size: 16px;
+}
+.contents-section > div.h1-link-div.reduced-by-2 {
+  padding: 0;
+  padding-left: 80px;
+  font-size: 14px;
+}
+.contents-section > div.h1-link-div.reduced-by-3 {
+  padding: 0;
+  padding-left: 120px;
+  font-size: 12px;
+}
+.contents-section > div.h1-link-div.reduced-by-4 {
+  padding: 0;
+  padding-left: 160px;
+  font-size: 10px;
+}
+.contents-section > div.h1-link-div.reduced-by-5 {
+  padding: 0;
+  padding-left: 200px;
   font-size: 8px;
 }
 
@@ -52,7 +83,6 @@ a.contents-section--scroll-to-content-list {
   color: transparent;
 }
 a.contents-section--scroll-to-content-list:before {
-  content: "☰";
   content: "⬆UP";
   display: inline-block;
   padding-left: 10px;
