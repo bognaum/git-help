@@ -16,135 +16,147 @@
 		<h1>Git help</h1>
 		<fieldset class="contents-section"><legend>Contents</legend></fieldset>
 		<article>
-			<h1>Stop tracking file</h1>
-			<div class="cmd-div">
-				<div class="inv"></div>git rm --cashed <div class="meta">path</div>
-			</div>
-		</article>
-		<!-- <span
-		  class="fll fll-span"
-		  title="D:/GitHub-my/git-help/src/html/index.html : 24"
-		  style="font-weight: bold; cursor: pointer;">-24-</span> -->
-		<article>
-			<h1>Delete file or folder</h1>
-			<div class="cmd-div">
-				<div class="inv"></div>git rm <div class="meta">path</div>
-			</div>
-		</article>
-		<!-- <span
-		  class="fll fll-span"
-		  title="D:/GitHub-my/git-help/src/html/index.html : 31"
-		  style="font-weight: bold; cursor: pointer;">-31-</span> -->
-		<article>
-			<h1>Clone with submodules</h1>
-			<div class="cmd-div">
-				<div class="inv">.../main-module-parent</div>git clone --recursive <div class="meta">url</div>
-			</div>
-			<p>or</p>
-			<div class="cmd-div">
-				<div class="inv">.../main-module-parent</div>git clone --recurse-submodules <div class="meta">url</div>
-			</div>
-		</article>
-		<!-- <span
-		  class="fll fll-span"
-		  title="D:/GitHub-my/git-help/src/html/index.html : 42"
-		  style="font-weight: bold; cursor: pointer;">-42-</span> -->
-		<article>
-			<h1>Change submodule URL</h1>
-			<div class="cmd-div">
-				<div class="inv">.../main-module</div>git submodule set-url <div class="meta">path-from-main-modole-root</div> <div class="meta">new-url</div>
-			</div>
-		</article>
-		<!-- <span
-		  class="fll fll-span"
-		  title="D:/GitHub-my/git-help/src/html/index.html : 49"
-		  style="font-weight: bold; cursor: pointer;">-49-</span> -->
-		<article>
-			<h1>Additionally clone all submodules</h1>
-			<div class="cmd-div">
-				<div class="inv">.../main-module</div>git submodule update --init --recursive
-			</div>
-		</article>
-		<!-- <span
-		  class="fll fll-span"
-		  title="D:/GitHub-my/git-help/src/html/index.html : 56"
-		  style="font-weight: bold; cursor: pointer;">-56-</span> -->
-		<!-- <article>
-			<h1>Additionally clone all submodules from itself remote repositories</h1>
-			<div class="cmd-div">
-				<div class="inv">.../main-module</div>git submodule update --init --recursive --remote
-			</div>
-		</article> -->
-		<article>
-			<h1>Update all submodules from itself remote repositories</h1>
-			<div class="cmd-div">
-				<div class="inv">.../main-module</div>git submodule update --init --recursive --remote
-			</div>
-		</article>
-		<!-- <span
-		  class="fll fll-span"
-		  title="D:/GitHub-my/git-help/src/html/index.html : 69"
-		  style="font-weight: bold; cursor: pointer;">-69-</span> -->
-		<article>
-			<h1>Update all submodules from itself remote repositories</h1>
-			<div class="cmd-div">
-				<div class="inv">.../main-module</div>git submodule update --init --recursive --remote
-			</div>
-		</article>
-		<!-- <span
-		  class="fll fll-span"
-		  title="D:/GitHub-my/git-help/src/html/index.html : 76"
-		  style="font-weight: bold; cursor: pointer;">-76-</span> -->
-		<article>
-			<h1>Delete submodule</h1>
+			<h1>Submodules</h1>
 			<article>
-				<h1>Via console</h1>
-				<ol>
-					<li>
-						<p>Delete a submodule folder.</p>
-						<div class="cmd-div">
-							<div class="inv"></div>git rm <div class="meta">path</div>
-						</div>
-					</li>
-					<li>
-						<p>Commit already staged changes.</p>
-						<div class="cmd-div">
-							<div class="inv"></div>git commit -m "Deleted submodule."
-						</div>
-					</li>
-				</ol>
+				<h1>Clone with submodules</h1>
+				<div class="cmd-div">
+					<div class="inv">.../main-module-parent</div>git clone --recursive <div class="meta">url</div>
+				</div>
+				<p>or</p>
+				<div class="cmd-div">
+					<div class="inv">.../main-module-parent</div>git clone --recurse-submodules <div class="meta">url</div>
+				</div>
+			</article>
+			<!-- <span
+			  class="fll fll-span"
+			  title="D:/GitHub-my/git-help/src/html/index.html : 30"
+			  style="font-weight: bold; cursor: pointer;">-30-</span> -->
+			<article>
+				<h1>Change submodule URL</h1>
+				<div class="cmd-div">
+					<div class="inv">.../main-module</div>git submodule set-url <div class="meta">path-from-main-modole-root</div> <div class="meta">new-url</div>
+				</div>
+			</article>
+			<!-- <span
+			  class="fll fll-span"
+			  title="D:/GitHub-my/git-help/src/html/index.html : 37"
+			  style="font-weight: bold; cursor: pointer;">-37-</span> -->
+			<article>
+				<h1>Additionally clone all submodules</h1>
+				<div class="cmd-div">
+					<div class="inv">.../main-module</div>git submodule update --init --recursive
+				</div>
 			</article>
 			<article>
-				<h1>Manually</h1>
-				<ol>
-					<li>
-						<p>
-							From a <code>/.gitmodules</code> file delete section of appropriate submodule. Or delete the file if no more submodules.
-						</p>
-						<p></p>
-					</li>
-					<li>
-						<p>
-							From a <code>.git/config</code> file delete section of appropriate submodule.
-						</p>
-					</li>
-					<li>
-						<p>Delete the folder of submodule.</p>
-					</li>
-					<li>
-						<p>Stage and commit.</p>
-					</li>
-					<li>
-						<p>
-							(Optionally.) From a <code>/.git/modules</code> folder delete a folded of appropriate submodule.
-						</p>
-					</li>
-				</ol>
+				<h1>Update all submodules from itself remote repositories</h1>
+				<div class="cmd-div">
+					<div class="inv">.../main-module</div>git submodule update --init --recursive --remote
+				</div>
 			</article>
-			<div class="cmd-div">
-				<div class="inv">.../main-module</div>
-			</div>
+			<!-- <span
+			  class="fll fll-span"
+			  title="D:/GitHub-my/git-help/src/html/index.html : 50"
+			  style="font-weight: bold; cursor: pointer;">-50-</span> -->
+			<article>
+				<h1>Update all submodules from itself remote repositories</h1>
+				<div class="cmd-div">
+					<div class="inv">.../main-module</div>git submodule update --init --recursive --remote
+				</div>
+			</article>
+			<!-- <span
+			  class="fll fll-span"
+			  title="D:/GitHub-my/git-help/src/html/index.html : 57"
+			  style="font-weight: bold; cursor: pointer;">-57-</span> -->
+			<article>
+				<h1>Delete submodule</h1>
+				<article>
+					<h1>Via console</h1>
+					<ol>
+						<li>
+							<p>Delete a submodule folder.</p>
+							<div class="cmd-div">
+								<div class="inv"></div>git rm <div class="meta">path</div>
+							</div>
+						</li>
+						<li>
+							<p>Commit already staged changes.</p>
+							<div class="cmd-div">
+								<div class="inv"></div>git commit -m "Deleted submodule."
+							</div>
+						</li>
+					</ol>
+				</article>
+				<article>
+					<h1>Manually</h1>
+					<ol>
+						<li>
+							<p>
+								From a <code>/.gitmodules</code> file delete section of appropriate submodule. Or delete the file if no more submodules.
+							</p>
+							<p></p>
+						</li>
+						<li>
+							<p>
+								From a <code>.git/config</code> file delete section of appropriate submodule.
+							</p>
+						</li>
+						<li>
+							<p>Delete the folder of submodule.</p>
+						</li>
+						<li>
+							<p>Stage and commit.</p>
+						</li>
+						<li>
+							<p>
+								(Optionally.) From a <code>/.git/modules</code> folder delete a folded of appropriate submodule.
+							</p>
+						</li>
+					</ol>
+				</article>
+				<div class="cmd-div">
+					<div class="inv">.../main-module</div>
+				</div>
+			</article>
 		</article>
+		<!-- <span
+		  class="fll fll-span"
+		  title="D:/GitHub-my/git-help/src/html/index.html : 109"
+		  style="font-weight: bold; cursor: pointer;">-109-</span> -->
+		<article>
+			<h1>Remote repo and GitHub</h1>
+			<article>
+				<h1>Change remote url</h1>
+				<div class="cmd-div">
+					<div class="inv">.../main-module</div>git remote set-url <div class="meta">remote-name</div> <div class="meta">new-url</div>
+				</div>
+				<div class="cmd-div">
+					<div class="inv">.../main-module</div>git remote set-url origin git@github.com:bognaum/git-help.git
+				</div>
+			</article>
+		</article>
+		<!-- <span
+		  class="fll fll-span"
+		  title="D:/GitHub-my/git-help/src/html/index.html : 122"
+		  style="font-weight: bold; cursor: pointer;">-122-</span> -->
+		<article>
+			<h1>Other</h1>
+			<article>
+				<h1>Stop tracking file</h1>
+				<div class="cmd-div">
+					<div class="inv"></div>git rm --cashed <div class="meta">path</div>
+				</div>
+			</article>
+			<article>
+				<h1>Delete file or folder</h1>
+				<div class="cmd-div">
+					<div class="inv"></div>git rm <div class="meta">path</div>
+				</div>
+			</article>
+		</article>
+		<!-- <span
+		  class="fll fll-span"
+		  title="D:/GitHub-my/git-help/src/html/index.html : 138"
+		  style="font-weight: bold; cursor: pointer;">-138-</span> -->
 	</div>
 </body>
 </html>
