@@ -267,8 +267,10 @@ ol.nested>li.nested {counter-increment: nested;}
 ol.nested>li.nested::marker {content: counters(nested, "-")". ";}
 
 
-article {
+article, section {
 	margin-bottom: 30px;
+	// border-left: 3px solid #555;
+	margin-left: 10px;
 	/* border-top: 1px solid #555;
 	&:nth-of-type(1) {
 		border-top: none;
