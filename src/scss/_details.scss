@@ -1,0 +1,20 @@
+details {
+	summary {
+		cursor: pointer;
+		// margin: 2px 30px;
+		margin: 0 5px;
+		padding: 2px 20px;
+		border-bottom: 1px solid $main_c;
+		width: 100px;
+		box-sizing: border-box;
+		
+	}
+}
+
+details[open] {
+	summary {
+		width: initial;
+		width: 100%;
+		width: calc(100% - 5px - 5px);
+	}
+}

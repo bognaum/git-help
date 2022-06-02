@@ -1,0 +1,159 @@
+// CLI {
+
+	.cmd-base{
+		background-color:#000;
+		color: #ccc;
+		font-family: consolas, monospace;
+		font-size: 16px;
+	}
+	
+	.psh-base {
+		background-color:#012456;
+		color: #ccc;
+		font-family: consolas, monospace;
+		font-size: 16px;
+		.command {
+			color: #F9F1A5
+		}
+	}
+	
+	.cli-meta {
+		display: inline;
+		color: #72b16a;
+		font-weight: normal;
+		user-select: none;
+		&:before{
+			content: "<";
+		}
+		&:after{
+			content: ">";
+		}
+		&:before, &:after{
+			// color: #e00;
+			text-shadow: none;
+		}
+	}
+	
+	.cli-opt {
+		display: inline;
+		color: #aaa;
+		font-weight: bold;
+		// color: #0B0;
+		font-style: italic;
+		&:before{
+			content: "[";
+		}
+		&:after{
+			content: "]";
+		}
+		&:before, &:after{
+			// color: #69c;
+			font-weight: bold;
+			// text-shadow: 0 0 2px #69c;
+		}
+	}
+	
+	.cli-inline {
+		.str{
+			white-space: pre-wrap;
+		}
+		.meta{
+			@extend .cli-meta;
+		}
+		.opt{
+			@extend .cli-opt;
+		}
+		&::selection {
+			background-color: #08f;
+			// color: #000;
+		}
+	}
+	
+	.cli-div {
+		// .cmd-div>.inv+{}
+		// .cmd-div>.inv+{dir /b}
+		// .cmd-div>.inv{D:\myproject}+{dir /b}
+		margin: 10px;
+		padding: 5px;
+		.inv{
+			display: inline;
+			color: #777;
+			font-weight: bold;
+			user-select: none;
+			&:after{
+				content: ">";
+				// color: #fff;
+				color: #777;
+				// user-select: none;
+			}
+		}
+		@extend .cli-inline;
+	}
+	
+	.cmd-meta {
+		@extend .cmd-base;
+		@extend .cli-meta;
+	}
+	.psh-meta {
+		@extend .psh-base;
+		@extend .cli-meta;
+	}
+	
+	.cmd-opt {
+		@extend .cmd-base;
+		@extend .cli-opt;
+	}
+	.psh-opt {
+		@extend .psh-base;
+		@extend .cli-opt;
+	}
+	
+	.cmd-inline {
+		@extend .cmd-base;
+		@extend .cli-inline;
+	}
+	.psh-inline {
+		@extend .psh-base;
+		@extend .cli-inline;
+	}
+	
+	.cmd-div {
+		@extend .cmd-base;
+		@extend .cli-div;
+	}
+	.psh-div {
+		@extend .psh-base;
+		@extend .cli-div;
+	
+		.inv:after {
+			content: "> ";
+		}
+	}
+	
+	// CLI }
+
+	.cli-command-scheme {
+		padding: 5px;
+		margin: 5px;
+	
+		>div,
+		ol,
+		ol>li {
+			border: 2px solid #333;
+			margin: -2px;
+		}
+	
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 5px;
+		}
+	
+		p {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
